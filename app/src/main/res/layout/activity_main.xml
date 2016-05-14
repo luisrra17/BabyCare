@@ -13,49 +13,55 @@
         android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="118dp">
+        android:layout_above="@+id/button"
+        android:layout_alignStart="@+id/textView">
 
         <RadioButton
             android:id="@+id/radio1"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/custombuttonbackground"
             android:button="@android:color/transparent"
             android:checked="true"
-            android:layout_marginTop="10dp"
-            android:text="Vamos a ver que tan grande puede ser nuestra respuesta sin cortarse" />
+            android:text="Vamos a ver que tan grande puede ser nuestra respuesta sin cortarse"
+            android:layout_marginBottom="10dp" />
 
         <RadioButton
             android:id="@+id/radio2"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/custombuttonbackground"
             android:button="@android:color/transparent"
             android:checked="true"
-            android:layout_marginTop="10dp"
-            android:text="Casi Siempre" />
+            android:layout_marginTop="15dp"
+            android:text="Casi Siempre puesto que su querido y amado pdre nunca le da de comer: idiota"
+            android:layout_marginBottom="10dp" />
 
         <RadioButton
             android:id="@+id/radio3"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/custombuttonbackground"
             android:button="@android:color/transparent"
             android:checked="true"
-            android:layout_marginTop="10dp"
-            android:text="Si" />
+            android:layout_marginTop="15dp"
+            android:text="Si la mayoria de veces suele hacer esta accion y no me gusta mucho"
+            android:layout_marginBottom="10dp" />
 
         <RadioButton
             android:id="@+id/radio4"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/custombuttonbackground"
             android:button="@android:color/transparent"
             android:checked="true"
-            android:layout_marginTop="10dp"
-            android:text="No" />
+            android:layout_marginTop="15dp"
+            android:text="Estoy llegando a pensar que mi hijo tiene serios problemas diabolicos"
+            android:layout_marginBottom="7dp" />
 
     </RadioGroup>
 
@@ -68,9 +74,9 @@
         android:padding="15dp"
         android:textSize="18dp"
         android:background="@drawable/textbg"
-        android:layout_above="@+id/radioGroup1"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="38dp" />
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -78,6 +84,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Pregunta #1"
         android:id="@+id/textView2"
+        android:layout_marginBottom="12dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 

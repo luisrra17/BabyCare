@@ -2,11 +2,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
 
 
-    <item android:state_pressed="true" >
+    <item android:state_checked="false">
         <shape android:shape="rectangle" >
             <corners android:radius="3dip" />
-            <stroke android:width="1dip" android:color="#319b66" />
-            <solid android:color="#50c88c" />
+            <stroke android:width="1dip" android:color="#000" />
+            <padding android:bottom="4dp" android:top="4dp"/>
+            <solid android:color="#fff" />
         </shape>
     </item>
 
@@ -15,8 +16,8 @@
         <shape android:shape="rectangle" >
             <corners android:radius="3dip" />
             <stroke android:width="1dip" android:color="#00cdcd" />
+            <padding android:bottom="4dp" android:top="4dp"/>
             <solid android:color="#ADD8E6" />
-
         </shape>
     </item>
 
