@@ -25,7 +25,7 @@
             android:button="@android:color/transparent"
             android:checked="true"
             android:layout_marginTop="10dp"
-            android:text="RadioButton1" />
+            android:text="Vamos a ver que tan grande puede ser nuestra respuesta sin cortarse" />
 
         <RadioButton
             android:id="@+id/radio2"
@@ -35,7 +35,7 @@
             android:button="@android:color/transparent"
             android:checked="true"
             android:layout_marginTop="10dp"
-            android:text="RadioButton2" />
+            android:text="Casi Siempre" />
 
         <RadioButton
             android:id="@+id/radio3"
@@ -45,7 +45,7 @@
             android:button="@android:color/transparent"
             android:checked="true"
             android:layout_marginTop="10dp"
-            android:text="RadioButton3" />
+            android:text="Si" />
 
         <RadioButton
             android:id="@+id/radio4"
@@ -55,7 +55,7 @@
             android:button="@android:color/transparent"
             android:checked="true"
             android:layout_marginTop="10dp"
-            android:text="RadioButton4" />
+            android:text="No" />
 
     </RadioGroup>
 
@@ -63,13 +63,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:text="Esto es una prueba de textos que se van haciendo cada vez mas y mas lagos de lo normal"
+        android:text="Su bebé tiende a tener episodios Psicoticos de ira y vomitar como el Exorcista?"
         android:id="@+id/textView"
         android:padding="15dp"
+        android:textSize="18dp"
         android:background="@drawable/textbg"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/radioGroup1"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="38dp" />
 
     <TextView
         android:layout_width="wrap_content"

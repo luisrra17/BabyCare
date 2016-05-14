@@ -7,11 +7,6 @@
             <corners android:radius="3dip" />
             <stroke android:width="1dip" android:color="#319b66" />
             <solid android:color="#50c88c" />
-            <padding
-                android:left="120dp"
-                android:top="5dp"
-                android:right="120dp"
-                android:bottom="5dp" />
         </shape>
     </item>
 
@@ -21,11 +16,7 @@
             <corners android:radius="3dip" />
             <stroke android:width="1dip" android:color="#00cdcd" />
             <solid android:color="#ADD8E6" />
-            <padding
-                android:left="120dp"
-                android:top="5dp"
-                android:right="120dp"
-                android:bottom="5dp" />
+
         </shape>
     </item>
 
