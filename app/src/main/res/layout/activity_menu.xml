@@ -10,22 +10,38 @@
     tools:context="com.example.adriana.babycare.Menu">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Comenzar Test"
         android:id="@+id/buttonComenzar"
-        android:layout_centerVertical="true"
+        android:onClick="irAEscogerGenero"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#636363"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:onClick="irAEscogerGenero" />
+        android:layout_marginTop="42dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Ayuda"
         android:id="@+id/buttonAyuda"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#636363"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:layout_below="@+id/buttonComenzar"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/buttonComenzar"
+        android:layout_marginTop="50dp" />
 
     <ImageView
         android:layout_width="160dp"
