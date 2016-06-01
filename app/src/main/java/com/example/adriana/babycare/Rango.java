@@ -1,5 +1,6 @@
 package com.example.adriana.babycare;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -11,50 +12,32 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 public class Rango extends Activity {
 
     // Array of strings storing country names
     String[] countries = new String[] {
-            "India",
-            "Pakistan",
-            "Sri Lanka",
-            "China",
-            "Bangladesh",
-            "Nepal",
-            "Afghanistan",
-            "North Korea",
-            "South Korea",
-            "Japan"
+            "3 - 6 MESES",
+            "6 - 9 MESES",
+            "9 - 12 MESES",
+            "12 - 18 MESES",
+            "18 - 24 MESES",
+            "24 - 36 MESES",
+            "36+ MESES",
     };
 
     // Array of integers points to images stored in /res/drawable-ldpi/
     int[] flags = new int[]{
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
+            R.drawable.b1,
+            R.drawable.b2,
+            R.drawable.b3,
+            R.drawable.b4,
+            R.drawable.b5,
+            R.drawable.b6,
+            R.drawable.b7,
     };
 
-    // Array of strings to store currencies
-    String[] currency = new String[]{
-            "Indian Rupee",
-            "Pakistani Rupee",
-            "Sri Lankan Rupee",
-            "Renminbi",
-            "Bangladeshi Taka",
-            "Nepalese Rupee",
-            "Afghani",
-            "North Korean Won",
-            "South Korean Won",
-            "Japanese Yen"
-    };
 
     /** Called when the activity is first created. */
     @Override
@@ -65,10 +48,9 @@ public class Rango extends Activity {
         // Each row in the list stores country name, currency and flag
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<7;i++){
             HashMap<String, String> hm = new HashMap<String,String>();
-            hm.put("txt", "Country : " + countries[i]);
-            hm.put("cur","Currency : " + currency[i]);
+            hm.put("txt", countries[i]);
             hm.put("flag", Integer.toString(flags[i]) );
             aList.add(hm);
         }
@@ -86,7 +68,9 @@ public class Rango extends Activity {
         // Getting a reference to listview of main.xml layout file
         ListView listView = ( ListView ) findViewById(R.id.listview);
 
+
         // Setting the adapter to the listView
         listView.setAdapter(adapter);
+
     }
 }

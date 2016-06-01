@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/baby3">
 
     <TextView
         android:id="@+id/textView1"
@@ -12,13 +13,8 @@
         android:textStyle="bold"
         android:text=" Elija un rango de edades"
         android:layout_gravity="center"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        />
+        android:gravity="center"
+        android:background="@drawable/cuadro_verde"/>
 
     <ListView
         android:id="@+id/listview"
