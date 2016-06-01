@@ -34,6 +34,7 @@
             android:textColor="#000"
             />
 
+
         <TextView
             android:id="@+id/cur"
             android:layout_width="wrap_content"
