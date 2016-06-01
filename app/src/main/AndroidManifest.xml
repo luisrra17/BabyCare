@@ -19,10 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Menu" />
-        <activity android:name=".escogerRangoEdad" />
-        <activity android:name=".PopUp"
-            android:theme="@style/AppTheme.CustomTheme"
-            ></activity>
+        <activity
+            android:name=".PopUp"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".Rango"></activity>
     </application>
 
 </manifest>

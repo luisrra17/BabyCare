@@ -17,6 +17,6 @@ public class Menu extends  Activity {
         setContentView(R.layout.activity_menu);
     }
     public void irAEscogerGenero(View v){
-        startActivity(new Intent(Menu.this,escogerRangoEdad.class));
+        startActivity(new Intent(Menu.this, Rango.class));
     }
 }
