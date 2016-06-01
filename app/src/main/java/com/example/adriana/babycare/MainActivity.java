@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Pregunta> listaPreguntas2 = new ArrayList<>();
     public static TextView textViewPregunta;
     public static TextView textViewTitulo;
+    public static ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         final String idRango = bundle.getString("rangoEdad");
-
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         textViewPregunta = (TextView) findViewById(R.id.textViewPregunta);
         textViewTitulo = (TextView) findViewById(R.id.textViewTitulo);
 
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 final String resultado  = getComentarioByRangoEdad(idRango);
                 final ArrayList<Pregunta> listaPreguntas = getPreguntasByRangoEdad(idRango);
+                listaPreguntas2.clear();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                         startActivity(new Intent(MainActivity.this,PopUp.class).putExtra("Texto",resultado));
                         System.out.println(resultado);
+                        progressBar.setVisibility(View.GONE);
                         cambiarPregunta();
                     }
                 });
@@ -92,7 +96,10 @@ public class MainActivity extends AppCompatActivity {
     private void cambiarPregunta() {
         indicePreguntaG++;
         textViewTitulo.setText("Pregunta #"+(indicePreguntaG+1));
-        String textoPregunta = listaPreguntas2.get(indicePreguntaG).getTexto();
+        String textoPregunta = "No hay preguntas";
+        if(listaPreguntas2.size() >0){
+        textoPregunta = listaPreguntas2.get(indicePreguntaG).getTexto();
+        }
         textViewPregunta.setText(textoPregunta);
 
     }

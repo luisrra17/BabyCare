@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:text="Su pregunta, Aqui"
+        android:text="Cargando Preguntas"
         android:id="@+id/textViewPregunta"
         android:padding="15dp"
         android:textSize="18dp"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Pregunta #1"
+        android:text="Preguntas"
         android:id="@+id/textViewTitulo"
         android:layout_marginBottom="12dp"
         android:layout_alignParentTop="true"
@@ -49,6 +49,15 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/ne"
         android:layout_alignTop="@+id/buttonAnterior" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
