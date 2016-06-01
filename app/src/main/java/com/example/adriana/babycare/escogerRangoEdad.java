@@ -17,8 +17,10 @@ public class escogerRangoEdad extends Activity {
     }
     public void irAVentanaPreguntas(View v){
         String rangoEdad = v.getTag().toString();
+        System.out.println("------------------------------"+rangoEdad+"--------------");
         Intent i  = new Intent(escogerRangoEdad.this,MainActivity.class);
-        i.putExtra(rangoEdad,"rangoEdad");
+        i.putExtra("rangoEdad",rangoEdad);
+
         startActivity(i);
 
     }

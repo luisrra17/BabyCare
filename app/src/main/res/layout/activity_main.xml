@@ -9,81 +9,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.adriana.babycare.MainActivity">
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/textView">
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custombuttonbackground"
-            android:button="@android:color/transparent"
-            android:checked="true"
-            android:text="Vamos a ver que tan grande puede ser nuestra respuesta sin cortarse"
-            android:layout_marginBottom="10dp" />
-
-        <RadioButton
-            android:id="@+id/radio2"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custombuttonbackground"
-            android:button="@android:color/transparent"
-            android:checked="true"
-            android:layout_marginTop="15dp"
-            android:text="Casi Siempre puesto que su querido y amado pdre nunca le da de comer: idiota"
-            android:layout_marginBottom="10dp" />
-
-        <RadioButton
-            android:id="@+id/radio3"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custombuttonbackground"
-            android:button="@android:color/transparent"
-            android:checked="true"
-            android:layout_marginTop="15dp"
-            android:text="Si la mayoria de veces suele hacer esta accion y no me gusta mucho"
-            android:layout_marginBottom="10dp" />
-
-        <RadioButton
-            android:id="@+id/radio4"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custombuttonbackground"
-            android:button="@android:color/transparent"
-            android:checked="true"
-            android:layout_marginTop="15dp"
-            android:text="Estoy llegando a pensar que mi hijo tiene serios problemas diabolicos"
-            android:layout_marginBottom="7dp" />
-
-    </RadioGroup>
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:text="Su bebé tiende a tener episodios Psicoticos de ira y vomitar como el Exorcista?"
-        android:id="@+id/textView"
+        android:text="Su pregunta, Aqui"
+        android:id="@+id/textViewPregunta"
         android:padding="15dp"
         android:textSize="18dp"
         android:background="@drawable/textbg"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textViewTitulo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:textAlignment="center" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Pregunta #1"
-        android:id="@+id/textView2"
+        android:id="@+id/textViewTitulo"
         android:layout_marginBottom="12dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -91,7 +36,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/buttonAnterior"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/pr"/>
@@ -99,11 +44,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/buttonSiguiente"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/ne"
-        android:layout_alignTop="@+id/button" />
+        android:layout_alignTop="@+id/buttonAnterior" />
 
 
 </RelativeLayout>
