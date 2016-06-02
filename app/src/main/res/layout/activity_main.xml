@@ -33,23 +33,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonAnterior"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/pr"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonSiguiente"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/ne"
-        android:layout_alignTop="@+id/buttonAnterior" />
-
     <ProgressBar
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
@@ -58,6 +41,28 @@
         android:progressDrawable="@drawable/circular_progress_bar"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sí"
+        android:id="@+id/buttonSi"
+        android:layout_below="@+id/progressBar"
+        android:layout_toStartOf="@+id/textViewTitulo"
+        android:visibility="invisible"
+        android:tag="1"
+        android:onClick="onClickBotonSiNo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:id="@+id/buttonNo"
+        android:layout_alignTop="@+id/buttonSi"
+        android:layout_toEndOf="@+id/textViewTitulo"
+        android:visibility="invisible"
+        android:tag="0"
+        android:onClick="onClickBotonSiNo" />
 
 
 </RelativeLayout>

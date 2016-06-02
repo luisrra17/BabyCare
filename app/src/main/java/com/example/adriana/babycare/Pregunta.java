@@ -11,16 +11,26 @@ public class Pregunta implements Serializable {
     private int id;
     private int peso;
     private int id_Area;
+    private int seleccion_peso;
 
-    public Pregunta(String texto, int id_Rango, int id, int peso, int id_Area) {
+    public Pregunta(String texto, int id_Rango, int id, int peso, int id_Area, int seleccion_peso) {
         this.texto = texto;
         this.id_Rango = id_Rango;
         this.id = id;
         this.peso = peso;
         this.id_Area = id_Area;
+        this.seleccion_peso = seleccion_peso;
     }
 
     public Pregunta() {
+    }
+
+    public int getSeleccion_peso() {
+        return seleccion_peso;
+    }
+
+    public void setSeleccion_peso(int seleccion_peso) {
+        this.seleccion_peso = seleccion_peso;
     }
 
     public String getTexto() {
