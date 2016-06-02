@@ -4,6 +4,7 @@ package com.example.adriana.babycare;
     import java.util.HashMap;
     import java.util.List;
     import android.app.Activity;
+    import android.content.Intent;
     import android.os.Bundle;
     import android.view.Menu;
     import android.view.View;
@@ -88,10 +89,21 @@ package com.example.adriana.babycare;
                     // Getting the Country TextView
                     TextView tvCountry = (TextView) linearLayoutChild.getChildAt(0);
 
-                    Toast.makeText(getBaseContext(), tvCountry.getText().toString(), Toast.LENGTH_SHORT).show();
+                    String rangoEdad = tvCountry.getText().toString();
+                    System.out.println("------------------------------"+rangoEdad+"--------------");
+                    if (rangoEdad.equals("3 - 6 MESES")){rangoEdad = Integer.toString(1);}
+                    if (rangoEdad.equals("6 - 9 MESES")){rangoEdad = Integer.toString(2);}
+                    if (rangoEdad.equals("9 - 12 MESES")){rangoEdad = Integer.toString(3);}
+                    if (rangoEdad.equals("12 - 18 MESES")){rangoEdad = Integer.toString(4);}
+                    if (rangoEdad.equals("18 - 24 MESES")){rangoEdad = Integer.toString(5);}
+                    if (rangoEdad.equals("24 - 36 MESES")){rangoEdad = Integer.toString(6);}
+                    if (rangoEdad.equals("36+ MESES")){rangoEdad = Integer.toString(7);}
+                    System.out.println("------------------------------"+rangoEdad+"--------------");
+                    Intent i  = new Intent(Rango.this, MainActivity.class);
+                    i.putExtra("rangoEdad",rangoEdad);
+                    startActivity(i);
                 }
             };
-
             // Setting the item click listener for the listview
             listView.setOnItemClickListener(itemClickListener);
         }
