@@ -14,7 +14,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.example.adriana.babycare.PopUp"
-        android:background="#befbf9f9"
+        android:background="#beffffff"
         android:layout_margin="15dp">
 
         <TextView
@@ -30,6 +30,6 @@
             android:textIsSelectable="true"
             android:textSize="25dp"
             android:textColor="#000"
-            android:background="#fafbf9f9" />
+            android:background="#bfffffff" />
     </RelativeLayout>
 </RelativeLayout>
