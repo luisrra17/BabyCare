@@ -82,6 +82,7 @@ public class MainActivity extends Activity {
         };
         thread.start();
 
+
     }
     public void onClickBotonSiNo(View view){
         int respuesta = Integer.parseInt(view.getTag().toString());

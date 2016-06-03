@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.adriana.babycare.Registro_Usuario">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextNombre"
+            android:layout_below="@+id/textView7"
+            android:layout_marginTop="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:text="Nombre"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextApellidoP"
+            android:layout_marginTop="24dp"
+            android:text="Primer Apellido"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:layout_below="@+id/editTextNombre"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/editTextApellidoS"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextApellidoS"
+            android:text="Segundo Apellido"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:layout_below="@+id/editTextApellidoP"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentEnd="true"
+            android:inputType="textPersonName" />
+
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+        android:id="@+id/radioGroupGenero"
+        android:layout_below="@+id/editTextPass"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:layout_alignEnd="@+id/editTextPass"
+        android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButtonFemenino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Femenino"
+                android:textColor="#000000"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMasculino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino"
+                android:textColor="#000000"
+                android:checked="false" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Registro de Usuario"
+            android:id="@+id/textView7"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:textColor="#000000" />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siguiente"
+            android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/editTextNumCel"
+        android:onClick="onClickBotonEnviar" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCorreo"
+        android:text="Correo Electrónico"
+        android:textAlignment="center"
+        android:textColor="#777474"
+        android:layout_below="@+id/editTextApellidoS"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentStart="true"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextPass"
+        android:text="Contraseña"
+        android:textAlignment="center"
+        android:textColor="#777474"
+        android:layout_below="@+id/editTextCorreo"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:inputType="textVisiblePassword" />
+
+    <EditText
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextRepeatPass"
+        android:text="Repetir Contraseña"
+        android:textAlignment="center"
+        android:textColor="#777474"
+        android:layout_alignBottom="@+id/editTextPass"
+        android:layout_alignParentEnd="true"
+        android:inputType="textVisiblePassword" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/editTextNumCel"
+        android:layout_alignTop="@+id/radioGroupGenero"
+        android:layout_toEndOf="@+id/textView7"
+        android:text="Teléfono"
+        android:layout_alignStart="@+id/editTextRepeatPass"
+        android:textAlignment="center"
+        android:textColor="#777474" />
+
+</RelativeLayout>

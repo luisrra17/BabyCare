@@ -36,7 +36,7 @@ public class splashScreen extends Activity {
 
                 finish();
                 iv.startAnimation(an3);
-                startActivity(new Intent(splashScreen.this,Menu.class));
+                startActivity(new Intent(splashScreen.this,InicioSesion.class));
             }
 
             @Override

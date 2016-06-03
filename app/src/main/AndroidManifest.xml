@@ -22,7 +22,10 @@
         <activity
             android:name=".PopUp"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".Rango"></activity>
+        <activity android:name=".Rango" />
+        <activity android:name=".Registro_Menor" />
+        <activity android:name=".Registro_Usuario" />
+        <activity android:name=".InicioSesion"></activity>
     </application>
 
 </manifest>
