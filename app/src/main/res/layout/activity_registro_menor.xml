@@ -1,180 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.adriana.babycare.Registro_Menor">
+    android:background="#d6f8f4"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Nuevo Test"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:textColor="#000000" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextNombre"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:text="Nombre"
-        android:textAlignment="center"
-        android:textColor="#777474"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextApellidoP"
-        android:layout_marginTop="24dp"
-        android:text="Primer Apellido"
-        android:layout_below="@+id/editTextNombre"
-        android:layout_alignEnd="@+id/editTextNombre"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center"
-        android:textColor="#777474"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextApellidoS"
-        android:text="Segundo Apellido"
-        android:textAlignment="center"
-        android:textColor="#777474"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/editTextApellidoP"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="24dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Edad (años, meses)"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/editTextApellidoS"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp"
-        android:textColor="#000000" />
-
-    <EditText
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editTextAnos"
-        android:layout_toStartOf="@+id/textView5"
-        android:text="Años"
-        android:textColor="#777474"
-        android:textAlignment="center"
-        android:layout_below="@+id/editTextApellidoS"
-        android:layout_marginTop="24dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=","
-        android:id="@+id/textView5"
-        android:textSize="30dp"
-        android:layout_alignBottom="@+id/editTextAnos"
-        android:layout_toStartOf="@+id/editTextMeses" />
-
-    <EditText
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editTextMeses"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_alignEnd="@+id/editTextApellidoS"
-        android:text="Meses"
-        android:textColor="#777474"
-        android:textAlignment="center" />
-
-    <RadioGroup
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:id="@+id/radioGroupGenero"
-        android:layout_below="@+id/editTextAnos"
-        android:layout_alignStart="@+id/editTextAnos"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="#c8ffffff"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.adriana.babycare.Registro_Menor"
+        android:layout_alignParentTop="true"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nuevo Test"
+            android:id="@+id/textView2"
+            android:textColor="#fff"
+            android:background="@drawable/resalte"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextNombre"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:text="Nombre"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextApellidoP"
+            android:layout_marginTop="24dp"
+            android:text="Primer Apellido"
+            android:layout_below="@+id/editTextNombre"
+            android:layout_alignEnd="@+id/editTextNombre"
+            android:layout_alignParentStart="true"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextApellidoS"
+            android:text="Segundo Apellido"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/editTextApellidoP"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Edad (años, meses)"
+            android:id="@+id/textView4"
+            android:textColor="#000000"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_alignStart="@+id/buttonEnviarDatos" />
+
+        <EditText
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextAnos"
+            android:layout_toStartOf="@+id/textView5"
+            android:text="Años"
+            android:textColor="#777474"
+            android:textAlignment="center"
+            android:layout_below="@+id/editTextApellidoS"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=","
+            android:id="@+id/textView5"
+            android:textSize="30dp"
+            android:layout_alignBottom="@+id/editTextAnos"
+            android:layout_toStartOf="@+id/editTextMeses" />
+
+        <EditText
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextMeses"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_alignEnd="@+id/editTextApellidoS"
+            android:text="Meses"
+            android:textColor="#777474"
+            android:textAlignment="center" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/radioGroupGenero"
+            android:layout_below="@+id/editTextAnos"
+            android:layout_alignStart="@+id/editTextAnos"
+            android:orientation="vertical">
+
+            <RadioButton android:id="@+id/radio_Masculino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino"
+                android:textColor="#000000"
+                android:checked="false" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Género"
+            android:id="@+id/textView6"
+            android:textColor="#000000"
+            android:layout_alignTop="@+id/radioGroupGenero"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_above="@+id/editTextPeso" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editTextPeso"
+            android:text="Peso"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:layout_above="@+id/buttonEnviarDatos"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:text="Altura"
+            android:textAlignment="center"
+            android:textColor="#777474"
+            android:layout_above="@+id/buttonEnviarDatos"
+            android:layout_alignEnd="@+id/buttonEnviarDatos" />
+
+        <Button
+            android:layout_width="500dp"
+            android:layout_height="30dp"
+            android:text="Siguiente"
+            android:id="@+id/buttonEnviarDatos"
+            android:layout_marginRight="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:background="@drawable/registb"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
         <RadioButton android:id="@+id/radio_Femenino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Femenino"
             android:textColor="#000000"
-            android:checked="true" />
+            android:checked="true"
+            android:layout_alignTop="@+id/textView6"
+            android:layout_toStartOf="@+id/editText" />
 
-        <RadioButton android:id="@+id/radio_Masculino"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Masculino"
-            android:textColor="#000000"
-            android:checked="false" />
-
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Género"
-        android:id="@+id/textView6"
-        android:textColor="#000000"
-        android:layout_alignBottom="@+id/radioGroupGenero"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="22dp" />
-
-    <EditText
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editTextPeso"
-        android:layout_below="@+id/radioGroupGenero"
-        android:layout_alignParentStart="true"
-        android:text="Peso"
-        android:textAlignment="center"
-        android:textColor="#777474"
-        android:layout_marginTop="24dp" />
-
-    <EditText
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:text="Altura"
-        android:textAlignment="center"
-        android:textColor="#777474"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_below="@+id/radioGroupGenero"
-        android:layout_marginTop="24dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Siguiente"
-        android:id="@+id/buttonEnviarDatos"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/radioGroupGenero"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp" />
-
+    </RelativeLayout>
 </RelativeLayout>
