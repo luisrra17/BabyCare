@@ -2,7 +2,6 @@ package com.example.adriana.babycare;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -22,7 +21,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +45,7 @@ public class PopUpRegistroUsuario extends Activity {
         final String cellphone = bundle.getString("cellphone");
         final String sex = bundle.getString("sex");
         botonEntendido = (Button) findViewById(R.id.buttonOk);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBarSesion);
         textViewAvisoRegistrando = (TextView) findViewById(R.id.textViewAvisoRegistrando);
         int width = dm.widthPixels;
         int height = dm.heightPixels;

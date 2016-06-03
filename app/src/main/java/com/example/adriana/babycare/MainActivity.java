@@ -2,10 +2,7 @@ package com.example.adriana.babycare;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -47,7 +44,7 @@ public class MainActivity extends Activity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         final String idRango = bundle.getString("rangoEdad");
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBarSesion);
         textViewPregunta = (TextView) findViewById(R.id.textViewPregunta);
         textViewTitulo = (TextView) findViewById(R.id.textViewTitulo);
         botonSi = (Button) findViewById(R.id.buttonSi);
