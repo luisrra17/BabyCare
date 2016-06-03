@@ -72,33 +72,28 @@ public class Registro_Usuario extends Activity {
         final String sex =  ((RadioButton) findViewById(genero.getCheckedRadioButtonId())).getText().toString();
         final int textoVacio = nombrePersona.length()*primerApellido.length()*segundoApellido.length()*email.length()*password.length()*repPassword.length()*cellphone.length();
         System.out.println(nombrePersona+primerApellido+segundoApellido+email+password+repPassword+cellphone+sex);
+
         if(textoVacio>0  ){
             System.out.println("HOLAA");
             if(password.equals(repPassword)){
                 System.out.println("ADIOSSSS");
-                Thread thread = new Thread(){
-                    @Override
-                    public void run() {
-
-                        final String resultado  = insertarNuevoUsuario(nombrePersona,primerApellido,segundoApellido,email,password,cellphone,sex);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getApplicationContext(),"Ya termine, la vara termino con estado"+resultado,Toast.LENGTH_SHORT).show();;
-                            }
-                        });
-                    }
-                };
-                thread.start();
-
+                Intent intent=new Intent(Registro_Usuario.this,PopUpRegistroUsuario.class);
+                intent.putExtra("nombrePersona",nombrePersona);
+                intent.putExtra("primerApellido",primerApellido);
+                intent.putExtra("segundoApellido",segundoApellido);
+                intent.putExtra("email",email);
+                intent.putExtra("password",password);
+                intent.putExtra("cellphone",cellphone);
+                intent.putExtra("sex",sex);
+                startActivity(intent);
 
 
             }else{
-
+                Toast.makeText(getApplicationContext(),"Las contraseñas deben coincidir",Toast.LENGTH_SHORT).show();
             }
         }
         else{
-
+            Toast.makeText(getApplicationContext(),"Asegurese de llenar todos los espacios correctamente",Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -107,31 +102,5 @@ public class Registro_Usuario extends Activity {
 
 
 
-    private String insertarNuevoUsuario(String nombrePersona, String primerApellido, String segundoApellido, String email, String password, String cellphone, String sex) {
 
-
-        /**/
-        String respuesta = "";
-        HttpClient cliente = new DefaultHttpClient();
-        HttpContext contexto = new BasicHttpContext();
-        System.out.println("http://babycaretec.hol.es/BabyCare/RegistroUsuario.php?primer_apellido="+primerApellido+"&segundo_apellido="+segundoApellido+"&nombre="+nombrePersona+"&genero="+sex+"&telefono="+cellphone+"&email="+email+"&password="+password);
-        HttpPost httpPost = new HttpPost("http://babycaretec.hol.es/BabyCare/RegistroUsuario.php");
-        HttpResponse response = null;
-        try{
-            List<NameValuePair> params = new ArrayList<NameValuePair>(10);
-            params.add(new BasicNameValuePair("primer_apellido",primerApellido));
-            params.add(new BasicNameValuePair("segundo_apellido",segundoApellido));
-            params.add(new BasicNameValuePair("nombre",nombrePersona));
-            params.add(new BasicNameValuePair("genero",sex));
-            params.add(new BasicNameValuePair("telefono",cellphone));
-            params.add(new BasicNameValuePair("email",email));
-            params.add(new BasicNameValuePair("password",password));
-            httpPost.setEntity(new UrlEncodedFormEntity(params));
-            response = cliente.execute(httpPost,contexto);
-        }catch (Exception ex){
-
-        }
-
-        return respuesta;
-    }
 }

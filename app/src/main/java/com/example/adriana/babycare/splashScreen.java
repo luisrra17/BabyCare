@@ -19,11 +19,11 @@ public class splashScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+
         final ImageView iv = (ImageView) findViewById(R.id.logoTec);
         final Animation an = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
         final Animation an3 = AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_out);
         iv.startAnimation(an);
-       // musicaLogo = MediaPlayer.create(this, R.raw.logosound);
         an.setAnimationListener(new Animation.AnimationListener() {
 
 

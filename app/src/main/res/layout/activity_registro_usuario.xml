@@ -17,36 +17,36 @@
             android:layout_marginTop="45dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:text="Nombre"
             android:textAlignment="center"
             android:textColor="#777474"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:hint="Nombre" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editTextApellidoP"
             android:layout_marginTop="24dp"
-            android:text="Primer Apellido"
             android:textAlignment="center"
             android:textColor="#777474"
             android:layout_below="@+id/editTextNombre"
             android:layout_alignParentStart="true"
             android:layout_alignEnd="@+id/editTextApellidoS"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:hint="Primer Apellido" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editTextApellidoS"
-            android:text="Segundo Apellido"
             android:textAlignment="center"
             android:textColor="#777474"
             android:layout_below="@+id/editTextApellidoP"
             android:layout_alignParentStart="true"
             android:layout_marginTop="24dp"
             android:layout_alignParentEnd="true"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:hint="Segundo Apellido" />
 
     <RadioGroup
             android:layout_width="match_parent"
@@ -99,37 +99,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editTextCorreo"
-        android:text="Correo Electrónico"
         android:textAlignment="center"
         android:textColor="#777474"
         android:layout_below="@+id/editTextApellidoS"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="24dp"
         android:layout_alignParentStart="true"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:hint="Correo Electrónico" />
 
     <EditText
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:id="@+id/editTextPass"
-        android:text="Contraseña"
         android:textAlignment="center"
         android:textColor="#777474"
         android:layout_below="@+id/editTextCorreo"
         android:layout_alignParentStart="true"
         android:layout_marginTop="24dp"
-        android:inputType="textVisiblePassword" />
+        android:inputType="textVisiblePassword"
+        android:hint="Contraseña" />
 
     <EditText
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:id="@+id/editTextRepeatPass"
-        android:text="Repetir Contraseña"
         android:textAlignment="center"
         android:textColor="#777474"
         android:layout_alignBottom="@+id/editTextPass"
         android:layout_alignParentEnd="true"
-        android:inputType="textVisiblePassword" />
+        android:inputType="textVisiblePassword"
+        android:hint="Repetir Contraseña" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -139,9 +139,9 @@
         android:id="@+id/editTextNumCel"
         android:layout_alignTop="@+id/radioGroupGenero"
         android:layout_toEndOf="@+id/textView7"
-        android:text="Teléfono"
         android:layout_alignStart="@+id/editTextRepeatPass"
         android:textAlignment="center"
-        android:textColor="#777474" />
+        android:textColor="#777474"
+        android:hint="Teléfono" />
 
 </RelativeLayout>

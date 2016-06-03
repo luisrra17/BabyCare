@@ -25,7 +25,9 @@
         <activity android:name=".Rango" />
         <activity android:name=".Registro_Menor" />
         <activity android:name=".Registro_Usuario" />
-        <activity android:name=".InicioSesion"></activity>
+        <activity android:name=".InicioSesion" />
+        <activity android:name=".PopUpRegistroUsuario"
+            android:theme="@style/AppTheme.CustomTheme" ></activity>
     </application>
 
 </manifest>
