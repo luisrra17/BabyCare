@@ -31,5 +31,19 @@
             android:textSize="25dp"
             android:textColor="#000"
             android:background="#bfffffff" />
+
+        <Button
+            android:layout_width="500dp"
+            android:layout_height="30dp"
+            android:text="Entendido"
+            android:id="@+id/understood"
+            android:layout_marginRight="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:background="@drawable/registb"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+
     </RelativeLayout>
 </RelativeLayout>
