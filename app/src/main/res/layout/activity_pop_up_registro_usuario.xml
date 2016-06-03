@@ -31,11 +31,16 @@
         android:textAlignment="center" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="500dp"
+        android:layout_height="30dp"
         android:text="Entendido"
         android:id="@+id/buttonOk"
         android:layout_below="@+id/progressBarSesion"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/registb"
         android:layout_centerHorizontal="true"
         android:visibility="invisible" />
+
+
 </RelativeLayout>
