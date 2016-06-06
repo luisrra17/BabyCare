@@ -29,5 +29,7 @@ public class PopUp extends Activity {
         Bundle bundle = intent.getExtras();
         String texto = bundle.getString("Texto");
         textView.setText(texto);
+
+
     }
 }
