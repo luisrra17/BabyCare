@@ -64,7 +64,7 @@ public class InicioSesion extends Activity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),"Ya termine, la vara termino con estado"+resultado,Toast.LENGTH_SHORT).show();;
+
                         if(resultado.equals("ERROR 01")){
                             Toast.makeText(getApplicationContext(),"Correo electrónico incorrecto. "+resultado,Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);

@@ -19,56 +19,43 @@
         android:layout_alignParentTop="true"
         android:layout_margin="15dp">
 
-        <TextView
-            android:layout_width="500dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Nuevo Test"
-            android:id="@+id/textView2"
-            android:textColor="#fff"
-            android:background="@drawable/resalte"
-            android:gravity="center"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
-
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editTextNombre"
-            android:layout_below="@+id/textView2"
             android:layout_marginTop="24dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:text="Nombre"
             android:textAlignment="center"
             android:textColor="#777474"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:hint="Nombre" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editTextApellidoP"
             android:layout_marginTop="24dp"
-            android:text="Primer Apellido"
             android:layout_below="@+id/editTextNombre"
             android:layout_alignEnd="@+id/editTextNombre"
             android:layout_alignParentStart="true"
             android:textAlignment="center"
             android:textColor="#777474"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:hint="Primer Apellido" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editTextApellidoS"
-            android:text="Segundo Apellido"
             android:textAlignment="center"
             android:textColor="#777474"
             android:inputType="textPersonName"
             android:layout_below="@+id/editTextApellidoP"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:hint="Segundo Apellido" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,7 +65,7 @@
             android:id="@+id/textView4"
             android:textColor="#000000"
             android:layout_alignTop="@+id/textView5"
-            android:layout_alignStart="@+id/buttonEnviarDatos" />
+            android:layout_alignStart="@+id/buttonSiguiente" />
 
         <EditText
             android:layout_width="70dp"
@@ -87,11 +74,11 @@
             android:ems="10"
             android:id="@+id/editTextAnos"
             android:layout_toStartOf="@+id/textView5"
-            android:text="Años"
             android:textColor="#777474"
             android:textAlignment="center"
             android:layout_below="@+id/editTextApellidoS"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:hint="Años" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -111,18 +98,20 @@
             android:id="@+id/editTextMeses"
             android:layout_alignBottom="@+id/textView5"
             android:layout_alignEnd="@+id/editTextApellidoS"
-            android:text="Meses"
             android:textColor="#777474"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:hint="Meses" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginTop="30dp"
             android:id="@+id/radioGroupGenero"
-            android:layout_below="@+id/editTextAnos"
+            android:orientation="vertical"
+            android:layout_alignEnd="@+id/editTextAltura"
+            android:layout_toEndOf="@+id/editTextPeso"
             android:layout_alignStart="@+id/editTextAnos"
-            android:orientation="vertical">
+            android:layout_below="@+id/editTextAnos"
+            android:layout_marginTop="24dp">
 
             <RadioButton android:id="@+id/radio_Masculino"
                 android:layout_width="wrap_content"
@@ -130,6 +119,15 @@
                 android:text="Masculino"
                 android:textColor="#000000"
                 android:checked="false" />
+
+            <RadioButton android:id="@+id/radio_Femenino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Femenino"
+                android:textColor="#000000"
+                android:checked="true"
+                android:layout_alignTop="@+id/textView6"
+                android:layout_toStartOf="@+id/editTextAltura" />
 
         </RadioGroup>
 
@@ -140,9 +138,10 @@
             android:text="Género"
             android:id="@+id/textView6"
             android:textColor="#000000"
-            android:layout_alignTop="@+id/radioGroupGenero"
             android:layout_alignStart="@+id/textView4"
-            android:layout_above="@+id/editTextPeso" />
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="24dp"
+            android:layout_alignLeft="@+id/radioGroupGenero" />
 
         <EditText
             android:layout_width="150dp"
@@ -150,44 +149,35 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editTextPeso"
-            android:text="Peso"
             android:textAlignment="center"
             android:textColor="#777474"
-            android:layout_above="@+id/buttonEnviarDatos"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioGroupGenero"
+            android:hint="Peso" />
 
         <EditText
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText"
-            android:text="Altura"
+            android:id="@+id/editTextAltura"
             android:textAlignment="center"
             android:textColor="#777474"
-            android:layout_above="@+id/buttonEnviarDatos"
-            android:layout_alignEnd="@+id/buttonEnviarDatos" />
+            android:layout_alignEnd="@+id/buttonSiguiente"
+            android:layout_below="@+id/radioGroupGenero"
+            android:hint="Altura" />
 
         <Button
             android:layout_width="500dp"
             android:layout_height="30dp"
             android:text="Siguiente"
-            android:id="@+id/buttonEnviarDatos"
+            android:id="@+id/buttonSiguiente"
             android:layout_marginRight="15dp"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:background="@drawable/registb"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
-
-        <RadioButton android:id="@+id/radio_Femenino"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Femenino"
-            android:textColor="#000000"
-            android:checked="true"
-            android:layout_alignTop="@+id/textView6"
-            android:layout_toStartOf="@+id/editText" />
 
     </RelativeLayout>
 </RelativeLayout>

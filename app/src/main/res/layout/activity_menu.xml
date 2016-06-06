@@ -23,7 +23,7 @@
     <Button
         android:text="Comenzar Test"
         android:id="@+id/buttonComenzar"
-        android:onClick="irAEscogerGenero"
+        android:onClick="irADatosMenor"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:layout_width="250dp"

@@ -33,8 +33,6 @@ public class PopUpRegistroUsuario extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up_registro_usuario);
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         final String nombrePersona = bundle.getString("nombrePersona");
@@ -47,6 +45,9 @@ public class PopUpRegistroUsuario extends Activity {
         botonEntendido = (Button) findViewById(R.id.buttonOk);
         progressBar = (ProgressBar) findViewById(R.id.progressBarSesion);
         textViewAvisoRegistrando = (TextView) findViewById(R.id.textViewAvisoRegistrando);
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
@@ -60,8 +61,6 @@ public class PopUpRegistroUsuario extends Activity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),"Ya termine, la vara termino con estado"+resultado,Toast.LENGTH_SHORT).show();;
-                        System.out.println("-------------------"+resultado+"------------");
                         progressBar.setVisibility(View.INVISIBLE);
                         botonEntendido.setVisibility(View.VISIBLE);
                         textViewAvisoRegistrando.setText("Usuario Registrado correctamente.");

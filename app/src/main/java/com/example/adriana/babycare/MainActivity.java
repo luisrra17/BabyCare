@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        final String idRango = bundle.getString("rangoEdad");
+        final String edadEnMeses = bundle.getString("edad");
         progressBar = (ProgressBar) findViewById(R.id.progressBarSesion);
         textViewPregunta = (TextView) findViewById(R.id.textViewPregunta);
         textViewTitulo = (TextView) findViewById(R.id.textViewTitulo);
@@ -54,8 +54,8 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
 
-                final String resultado  = getComentarioByRangoEdad(idRango);
-                final ArrayList<Pregunta> listaPreguntas = getPreguntasByRangoEdad(idRango);
+                final String resultado  = getComentarioByRangoEdad(edadEnMeses);
+                final ArrayList<Pregunta> listaPreguntas = getPreguntasByRangoEdad(edadEnMeses);
                 arregloAreas = getAreas();
                 listaPreguntas2.clear();
                 runOnUiThread(new Runnable() {
@@ -131,7 +131,7 @@ public class MainActivity extends Activity {
         String respuesta = "";
         HttpClient cliente = new DefaultHttpClient();
         HttpContext contexto = new BasicHttpContext();
-        System.out.println("http://babycaretec.hol.es/BabyCare/getComentariosPorRango.php?id_rango="+rangoEdad);
+
         HttpGet httpGet = new HttpGet("http://babycaretec.hol.es/BabyCare/getComentariosPorRango.php?id_rango="+rangoEdad);
             try{
                 HttpResponse response = cliente.execute(httpGet,contexto);
