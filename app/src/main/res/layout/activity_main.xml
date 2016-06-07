@@ -8,7 +8,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/bgp"
-    tools:context="com.example.adriana.babycare.MainActivity">
+    tools:context="com.example.adriana.babycare.MainActivity"
+    android:fadeScrollbars="false"
+
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -46,26 +49,127 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonSi"
-        android:background="@drawable/rigth"
-        android:visibility="invisible"
-        android:tag="1"
-        android:onClick="onClickBotonSiNo"
+        android:id="@+id/buttonBack"
+        android:background="@mipmap/back_button"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
+        android:enabled="false" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/wrong"
-        android:id="@+id/buttonNo"
-        android:visibility="invisible"
-        android:tag="0"
-        android:onClick="onClickBotonSiNo"
-        android:layout_alignTop="@+id/buttonSi"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/buttonNext"
+        android:layout_alignBottom="@+id/buttonBack"
+        android:layout_alignParentEnd="true"
+        android:background="@mipmap/next_button"
+        android:enabled="false"
+        android:visibility="invisible" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewPregunta"
+        android:layout_above="@+id/buttonNext"
+        android:id="@+id/relativeLayout">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/radioGroupPreguntas">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posible Respuesta 1"
+                android:id="@+id/radioButton1"
+                android:checked="false"
+                android:textStyle="bold|normal"
+                android:textSize="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/selectionbg"
+                android:fadeScrollbars="false"
+                android:visibility="invisible"
+                android:enabled="false"
+                android:onClick="onClickRadioButton" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posible Respuesta 2"
+                android:id="@+id/radioButton2"
+                android:checked="false"
+                android:textStyle="bold|normal"
+                android:textSize="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/selectionbg"
+                android:fadeScrollbars="false"
+                android:visibility="invisible"
+                android:enabled="false"
+                android:onClick="onClickRadioButton" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posible Respuesta 3"
+                android:id="@+id/radioButton3"
+                android:checked="false"
+                android:textStyle="bold|normal"
+                android:textSize="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/selectionbg"
+                android:fadeScrollbars="false"
+                android:visibility="invisible"
+                android:enabled="false"
+                android:onClick="onClickRadioButton" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posible Respuesta 4"
+                android:id="@+id/radioButton4"
+                android:checked="false"
+                android:textStyle="bold|normal"
+                android:textSize="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/selectionbg"
+                android:fadeScrollbars="false"
+                android:visibility="invisible"
+                android:enabled="false"
+                android:onClick="onClickRadioButton" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posible Respuesta 5"
+                android:id="@+id/radioButton5"
+                android:checked="false"
+                android:textStyle="bold|normal"
+                android:textSize="15dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:background="@drawable/selectionbg"
+                android:fadeScrollbars="false"
+                android:visibility="invisible"
+                android:enabled="false"
+                android:onClick="onClickRadioButton" />
+        </RadioGroup>
+    </RelativeLayout>
 
 
 </RelativeLayout>

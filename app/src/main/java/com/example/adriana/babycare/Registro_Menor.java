@@ -28,7 +28,7 @@ public class Registro_Menor extends Activity {
     EditText EditApellidoS ;
     EditText EditEdadAnos ;
     EditText EditEdadMeses ;
-    RadioButton RadioButtonGenero;
+    RadioGroup RadioButtonGenero;
     EditText EditPeso ;
     EditText EditAltura ;
     @Override
@@ -45,7 +45,7 @@ public class Registro_Menor extends Activity {
         EditApellidoS =(EditText) findViewById(R.id.editTextApellidoS)  ;
         EditEdadAnos =(EditText) findViewById(R.id.editTextAnos)  ;
         EditEdadMeses = (EditText) findViewById(R.id.editTextMeses) ;
-        RadioButtonGenero= (RadioButton) findViewById(((RadioGroup) findViewById(R.id.radioGroupGenero)).getCheckedRadioButtonId()) ;
+        RadioButtonGenero= (RadioGroup) findViewById(R.id.radioGroupGenero) ;
         EditPeso =(EditText) findViewById(R.id.editTextPeso)  ;
         EditAltura =(EditText) findViewById(R.id.editTextAltura)  ;
 
@@ -60,7 +60,7 @@ public class Registro_Menor extends Activity {
                 nombre =EditNombre.getText().toString() ;
                 edad_años =EditEdadAnos.getText().toString();
                 edad_meses =EditEdadMeses.getText().toString();
-                genero = RadioButtonGenero.getText().toString() ;
+                genero = ((RadioButton) findViewById(RadioButtonGenero.getCheckedRadioButtonId())).getText().toString();
                 peso = EditPeso.getText().toString();
                 altura  = EditAltura.getText().toString();
                 fid_encargado = usuario.getId() ;

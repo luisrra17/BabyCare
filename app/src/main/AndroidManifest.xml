@@ -29,8 +29,12 @@
         <activity
             android:name=".PopUpRegistroUsuario"
             android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".PopUpRegistroPaciente"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
+        <activity
+            android:name=".PopUpRegistroPaciente"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".PopUpResultado"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
     </application>
 
 </manifest>
