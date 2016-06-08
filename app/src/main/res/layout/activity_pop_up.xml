@@ -3,47 +3,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ddf6e9">
+    android:background="@drawable/textbg">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.example.adriana.babycare.PopUp"
-        android:background="#beffffff"
-        android:layout_margin="15dp">
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textComentario"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:textIsSelectable="true"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:background="#bfffffff"
+        android:layout_above="@+id/understood"
+        android:layout_margin="15dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textComentario"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-condensed"
-            android:textStyle="bold|italic"
-            android:gravity="center"
-            android:textIsSelectable="true"
-            android:textSize="25dp"
-            android:textColor="#000"
-            android:background="#bfffffff" />
-
-        <Button
-            android:layout_width="500dp"
-            android:layout_height="30dp"
-            android:text="Entendido"
-            android:id="@+id/understood"
-            android:layout_marginRight="15dp"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:background="@drawable/registb"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
-
-    </RelativeLayout>
+    <Button
+        android:layout_width="500dp"
+        android:layout_height="30dp"
+        android:text="Entendido"
+        android:id="@+id/understood"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/registb"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
 </RelativeLayout>

@@ -23,7 +23,7 @@ public class PopUp extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*0.8) ,(int)(height*0.6));
+        getWindow().setLayout((int)(width*0.8) ,(int)(height*0.8));
         TextView textView = (TextView) findViewById(R.id.textComentario);
         textView.setHeight((int) (height*0.3));
         textView.setBackgroundColor(36666);

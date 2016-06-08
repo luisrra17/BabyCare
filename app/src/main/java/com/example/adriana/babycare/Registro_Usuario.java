@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -85,7 +86,7 @@ public class Registro_Usuario extends Activity {
                 intent.putExtra("password",password);
                 intent.putExtra("cellphone",cellphone);
                 intent.putExtra("sex",sex);
-                startActivity(intent);
+                startActivityForResult(intent,1);
 
 
             }else{
@@ -98,9 +99,27 @@ public class Registro_Usuario extends Activity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                finish();
+            }if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(getApplicationContext(),"Ya ha sido registrado un usuario con este correo electrónico",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            startActivity(new Intent(Registro_Usuario.this, InicioSesion.class));
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 
 
 
-
-}
+    }

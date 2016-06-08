@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -97,6 +98,10 @@ public class PopUpRegistroPaciente extends Activity {
                                 intent.putExtra("paciente",paciente);
                                 intent.putExtra("usuario",usuario);
                                 intent.putExtra("edad",edadTotalMeses);
+
+                                Intent i = new Intent();
+                                setResult(Activity.RESULT_OK, i);
+                                finish();
                                 startActivity(intent);
 
                             }
@@ -142,5 +147,13 @@ public class PopUpRegistroPaciente extends Activity {
         }
 
         return respuesta;
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

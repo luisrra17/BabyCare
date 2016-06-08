@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
     public static ArrayList<Respuesta> listaRespuestas2 = new ArrayList<>();
     public static TextView textViewPregunta;
     public static TextView textViewTitulo;
+    public static TextView textViewContadorPreguntas;
     public static Button botonBack;
     public static Button botonNext;
     public static ProgressBar progressBar;
@@ -52,11 +54,17 @@ public class MainActivity extends Activity {
     Map<Integer, String> arregloAreas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-
+        puntajeUsuario = 0;
+        indicePreguntaG = -1;
+        listaPreguntas2 = new ArrayList<>();
+        listaRespuestas2 = new ArrayList<>();
+        listaQandA = new HashMap<>();
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         final String edadEnMeses = bundle.getString("edad");
@@ -72,6 +80,7 @@ public class MainActivity extends Activity {
         radioButton3 = (RadioButton) findViewById(R.id.radioButton3);
         radioButton4 = (RadioButton) findViewById(R.id.radioButton4);
         radioButton5 = (RadioButton) findViewById(R.id.radioButton5);
+        textViewContadorPreguntas = (TextView) findViewById(R.id.textViewContadorPreguntas);
 
         Thread thread = new Thread(){
             @Override
@@ -113,6 +122,8 @@ public class MainActivity extends Activity {
         botonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 int idSeleccionado = Integer.parseInt(((RadioButton) findViewById(radioGroupOpciones.getCheckedRadioButtonId())).getTag().toString());
                 listaQandA.put(String.valueOf(getPreguntaActual().getId()),String.valueOf(idSeleccionado));
                 if(terminePreguntas()){
@@ -126,7 +137,7 @@ public class MainActivity extends Activity {
                     nota.put("fid_paciente",String.valueOf(paciente.getId()));
                     }catch (Exception ex){}
                     intent.putExtra("nota", nota.toString());
-                    startActivity(intent);
+                    startActivityForResult(intent,3);
                 }
                 else {
 
@@ -172,13 +183,13 @@ public class MainActivity extends Activity {
         }
     }
 
-    private int calcularNota(int puntaje){
+    private int calcularNota(int puntos){
         int notaFinal = 0;
         int pesosTotal = 0;
         for(Respuesta resp:listaRespuestas2){
             pesosTotal+=resp.getPeso();
         }
-        notaFinal = puntaje*100/pesosTotal;
+        notaFinal = (puntos*100)/pesosTotal;
         return notaFinal;
     }
 
@@ -244,6 +255,7 @@ public class MainActivity extends Activity {
                 textViewTitulo.setText("Pregunta #" + (indicePreguntaG + 1) + " " + arregloAreas.get(listaPreguntas2.get(indicePreguntaG).getId_Area()));
                 cambiarOpciones(listaPreguntas2.get(indicePreguntaG).getId());
                 textViewPregunta.setText(textoPregunta);
+                textViewContadorPreguntas.setText(String.valueOf((indicePreguntaG+1))+"/"+String.valueOf(listaPreguntas2.size()));
             }
         }
         else{
@@ -410,5 +422,30 @@ public class MainActivity extends Activity {
         }
 
         return listaPreguntas;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+          //  startActivity(new Intent(MainActivity.this, Menu.class));
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 3) {
+            if (resultCode == Activity.RESULT_OK) {
+                finish();
+            }
+        }
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.clear();
+
     }
 }

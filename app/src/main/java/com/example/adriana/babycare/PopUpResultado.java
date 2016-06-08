@@ -22,6 +22,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,20 +33,22 @@ public class PopUpResultado extends Activity {
     public static  Button enviarResultad;
     String json;
     String jsonNota ;
+    TextView textViewRecomendacion;
+    boolean envioresultados = false;
     public  static ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_pop_up_resultado);
-
+        textViewRecomendacion = (TextView) findViewById(R.id.textViewRecomendacion);
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-
+        envioresultados = false;
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*0.8) ,(int)(height*0.6));
+        getWindow().setLayout((int)(width*0.8) ,(int)(height*0.8));
         notaFinal = (TextView) findViewById(R.id.textViewNotaFinal);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -60,31 +63,65 @@ public class PopUpResultado extends Activity {
         enviarResultad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                enviarResultad.setText("Enviando los resultados...");
-                enviarResultad.setEnabled(false);
+               if(envioresultados==false) {
+                   progressBar.setVisibility(View.VISIBLE);
+                   enviarResultad.setText("Enviando los resultados...");
+                   enviarResultad.setEnabled(false);
 
-                Thread thread = new Thread(){
-                    @Override
-                    public void run() {
+                   Thread thread = new Thread() {
+                       @Override
+                       public void run() {
 
-                        final String idPaciente  = insertarNuevoResultado(json,jsonNota);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                enviarResultad.setEnabled(true);
-                                progressBar.setVisibility(View.INVISIBLE);
+                           final String idPaciente = insertarNuevoResultado(json, jsonNota);
+                           final String recomendaciones = getRecomendacionPorNota(String.valueOf(resultado));
+                           System.out.println("-----------------RECOMENDACIONES:---------- "+recomendaciones);
+                           runOnUiThread(new Runnable() {
+                               @Override
+                               public void run() {
+                                   enviarResultad.setEnabled(true);
+                                   progressBar.setVisibility(View.INVISIBLE);
+                                   textViewRecomendacion.setText(recomendaciones);
+                                   textViewRecomendacion.setVisibility(View.VISIBLE);
+                                   envioresultados = true;
+                                   enviarResultad.setText("Entendido");
 
-                            }
-                        });
-                    }
-                };
-                thread.start();
-
+                               }
+                           });
+                       }
+                   };
+                   thread.start();
+               }else{
+                   Intent i = new Intent();
+                   setResult(Activity.RESULT_OK, i);
+                   finish();
+                 //  startActivity(new Intent(PopUpResultado.this,Menu.class));
+               }
             }
         });
 
 
+    }
+
+    private String getRecomendacionPorNota(String calificacion) {
+        String respuesta = "";
+        HttpClient cliente = new DefaultHttpClient();
+        HttpContext contexto = new BasicHttpContext();
+
+        HttpPost httpPost = new HttpPost("http://babycaretec.hol.es/BabyCare/getRecomendacionPorNota.php");
+        HttpResponse response = null;
+        try{
+            List<NameValuePair> params = new ArrayList<NameValuePair>(10);
+
+            params.add(new BasicNameValuePair("calificacion",calificacion));
+            httpPost.setEntity(new UrlEncodedFormEntity(params,"UTF-8"));
+            response = cliente.execute(httpPost,contexto);
+            HttpEntity entity  = response.getEntity();
+            respuesta = EntityUtils.toString(entity,"UTF-8");
+        }catch (Exception ex){
+
+        }
+
+        return respuesta;
     }
 
     private String insertarNuevoResultado(String json, String jsonNota) {

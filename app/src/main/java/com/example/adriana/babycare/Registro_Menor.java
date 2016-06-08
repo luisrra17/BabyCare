@@ -3,6 +3,7 @@ package com.example.adriana.babycare;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -80,7 +81,7 @@ public class Registro_Menor extends Activity {
                     intent.putExtra("altura", altura);
                     intent.putExtra("fid_encargado", fid_encargado);
                     intent.putExtra("anotaciones", anotaciones);
-                    startActivity(intent);
+                    startActivityForResult(intent,2);
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Debe llenar todos los campos",Toast.LENGTH_SHORT).show();
@@ -88,4 +89,24 @@ public class Registro_Menor extends Activity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK) {
+                finish();
+            }
+        }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == event.KEYCODE_BACK) {
+          //  startActivity(new Intent(Registro_Menor.this, Menu.class));
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
 }

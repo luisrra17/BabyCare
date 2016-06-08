@@ -20,10 +20,32 @@ public class Menu extends  Activity {
         Bundle bundle = intent.getExtras();
         usuario =(Usuario) bundle.get("usuario");
 
+
     }
     public void irADatosMenor(View v){
 
         startActivity(new Intent(Menu.this, Registro_Menor.class).putExtra("usuario",usuario));
 
     }
+
+    private boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // .... other stuff in my onResume ....
+        this.doubleBackToExitPressedOnce = false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Presione atrás de nuevo para salir", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

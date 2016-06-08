@@ -58,12 +58,21 @@ public class PopUpRegistroUsuario extends Activity {
             public void run() {
 
                final String resultado  = insertarNuevoUsuario(nombrePersona,primerApellido,segundoApellido,email,password,cellphone,sex);
+                System.out.print("RESULTADO:-------------------------"+resultado);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        progressBar.setVisibility(View.INVISIBLE);
-                        botonEntendido.setVisibility(View.VISIBLE);
-                        textViewAvisoRegistrando.setText("Usuario Registrado correctamente.");
+                        System.out.print("RESULTADO:-------------------------"+resultado);
+                        if(!resultado.equals("ERROR 03")) {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            botonEntendido.setVisibility(View.VISIBLE);
+                            textViewAvisoRegistrando.setText("Usuario Registrado correctamente.");
+                        }
+                        else{
+                            Intent i = new Intent();
+                            setResult(Activity.RESULT_CANCELED, i);
+                            finish();
+                        }
 
                     }
                 });
@@ -74,6 +83,8 @@ public class PopUpRegistroUsuario extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PopUpRegistroUsuario.this,InicioSesion.class));
+                Intent i = new Intent();
+                setResult(Activity.RESULT_OK, i);
                 finish();
             }
         });

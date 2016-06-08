@@ -42,12 +42,12 @@
             android:id="@+id/editTextPass"
             android:textAlignment="center"
             android:textColor="#777474"
-            android:inputType="textVisiblePassword"
             android:layout_marginTop="43dp"
             android:layout_below="@+id/editTextEmail"
             android:layout_alignStart="@+id/editTextEmail"
             android:layout_alignEnd="@+id/editTextEmail"
-            android:hint="Contraseña" />
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
 
 
         <ImageView

@@ -42,6 +42,8 @@ public class InicioSesion extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(InicioSesion.this,Registro_Usuario.class));
+                finish();
+
             }
         });
     }
@@ -98,7 +100,7 @@ public class InicioSesion extends Activity {
                             Intent intent = new Intent(InicioSesion.this,Menu.class);
                             intent.putExtra("usuario",usuario);
                             startActivity(intent);
-
+                            finish();
 
                         }
 
@@ -138,4 +140,25 @@ public class InicioSesion extends Activity {
 
         return respuesta;
     }
+
+
+    private boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // .... other stuff in my onResume ....
+        this.doubleBackToExitPressedOnce = false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Presione atrás de nuevo para salir", Toast.LENGTH_SHORT).show();
+    }
+
 }
