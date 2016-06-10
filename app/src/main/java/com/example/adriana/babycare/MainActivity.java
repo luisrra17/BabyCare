@@ -425,16 +425,6 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        // TODO Auto-generated method stub
-        if (keyCode == event.KEYCODE_BACK) {
-          //  startActivity(new Intent(MainActivity.this, Menu.class));
-            finish();
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 3) {
             if (resultCode == Activity.RESULT_OK) {
@@ -448,4 +438,26 @@ public class MainActivity extends Activity {
         outState.clear();
 
     }
+
+
+    private boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // .... other stuff in my onResume ....
+        this.doubleBackToExitPressedOnce = false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Presione atrás de nuevo para salir", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

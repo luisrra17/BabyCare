@@ -83,7 +83,7 @@ public class PopUpResultado extends Activity {
                                    textViewRecomendacion.setText(recomendaciones);
                                    textViewRecomendacion.setVisibility(View.VISIBLE);
                                    envioresultados = true;
-                                   enviarResultad.setText("Entendido");
+                                   enviarResultad.setText("Ok");
 
                                }
                            });

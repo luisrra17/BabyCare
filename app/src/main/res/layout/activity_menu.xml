@@ -52,15 +52,16 @@
         android:shadowRadius="5"
         android:layout_below="@+id/buttonComenzar"
         android:layout_alignStart="@+id/buttonComenzar"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:onClick="irAAyuda" />
 
     <ImageView
         android:layout_width="160dp"
         android:layout_height="230dp"
         android:background="@drawable/fondo"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_alignTop="@+id/textView3" />
+        android:layout_alignStart="@+id/textViewQuienSoy"
+        android:layout_alignTop="@+id/textViewQuienSoy" />
 
     <ImageView
         android:layout_width="140dp"
@@ -77,8 +78,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="¿Quiénes Somos?"
         android:textColor="#000230"
-        android:id="@+id/textView3"
+        android:id="@+id/textViewQuienSoy"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/imageView4" />
+        android:layout_alignStart="@+id/imageView4"
+        android:onClick="irAQuienesSomos" />
 
 </RelativeLayout>

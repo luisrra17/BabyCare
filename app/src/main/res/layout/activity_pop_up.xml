@@ -25,7 +25,7 @@
     <Button
         android:layout_width="500dp"
         android:layout_height="30dp"
-        android:text="Entendido"
+        android:text="Ok"
         android:id="@+id/understood"
         android:textColor="#FFFFFF"
         android:textSize="16sp"

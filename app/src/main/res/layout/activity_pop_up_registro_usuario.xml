@@ -34,7 +34,7 @@
     <Button
         android:layout_width="500dp"
         android:layout_height="30dp"
-        android:text="Entendido"
+        android:text="Ok"
         android:id="@+id/buttonOk"
         android:layout_below="@+id/progressBarSesion"
         android:textColor="#FFFFFF"
