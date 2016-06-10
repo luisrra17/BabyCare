@@ -28,7 +28,7 @@
                 android:layout_alignParentEnd="true"
                 android:textAlignment="center"
                 android:textColor="#777474"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:hint="Nombre" />
 
             <EditText
@@ -41,7 +41,7 @@
                 android:layout_below="@+id/editTextNombre"
                 android:layout_alignParentStart="true"
                 android:layout_alignEnd="@+id/editTextApellidoS"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:hint="Primer Apellido" />
 
             <EditText
@@ -54,7 +54,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="14dp"
                 android:layout_alignParentEnd="true"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:hint="Segundo Apellido" />
 
         <RadioGroup
@@ -121,7 +121,8 @@
             android:layout_marginTop="14dp"
             android:layout_alignParentStart="true"
             android:inputType="textEmailAddress"
-            android:hint="Correo Electrónico" />
+            android:hint="Correo Electrónico"
+            android:nextFocusDown="@+id/editTextPass" />
 
         <EditText
             android:layout_width="150dp"
@@ -133,7 +134,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="14dp"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:nextFocusDown="@+id/editTextRepeatPass" />
 
         <EditText
             android:layout_width="150dp"
@@ -144,7 +146,8 @@
             android:layout_alignBottom="@+id/editTextPass"
             android:layout_alignParentEnd="true"
             android:hint="Repetir Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:nextFocusDown="@+id/editTextNumCel" />
 
         <EditText
             android:layout_width="wrap_content"
