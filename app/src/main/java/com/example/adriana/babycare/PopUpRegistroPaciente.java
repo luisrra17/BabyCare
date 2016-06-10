@@ -42,6 +42,7 @@ public class PopUpRegistroPaciente extends Activity {
     EditText editTextAnotaciones;
     ProgressBar progressBar;
     Usuario usuario;
+    AnalyticsTracker analyticsTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class PopUpRegistroPaciente extends Activity {
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-
+        analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
         getWindow().setLayout((int)(width*0.9) ,(int)(height*0.7));
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -101,7 +102,9 @@ public class PopUpRegistroPaciente extends Activity {
 
                                 Intent i = new Intent();
                                 setResult(Activity.RESULT_OK, i);
+                                analyticsTracker.trackEvent("Registro", "Registro de un paciente", "Se registró un paciente");
                                 finish();
+
                                 startActivity(intent);
 
                             }

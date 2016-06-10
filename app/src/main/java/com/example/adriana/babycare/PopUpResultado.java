@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PopUpResultado extends Activity {
+    AnalyticsTracker  analyticsTracker;
     int resultado;
     TextView notaFinal;
     public static  Button enviarResultad;
@@ -44,6 +45,7 @@ public class PopUpResultado extends Activity {
         textViewRecomendacion = (TextView) findViewById(R.id.textViewRecomendacion);
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
+        analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
         envioresultados = false;
         int width = dm.widthPixels;
         int height = dm.heightPixels;
@@ -92,12 +94,14 @@ public class PopUpResultado extends Activity {
                    thread.start();
                }else{
                    Intent i = new Intent();
+                   analyticsTracker.trackEvent("Resultados", "Término de un test", "Se terminó un test");
                    setResult(Activity.RESULT_OK, i);
                    finish();
                  //  startActivity(new Intent(PopUpResultado.this,Menu.class));
                }
             }
         });
+
 
 
     }
