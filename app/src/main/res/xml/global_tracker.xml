@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ga_trackingId">UA-79088502-1</string>
+    <integer name="ga_sessionTimeout">300</integer>
+    <string name="ga_sampleFrequency">100.0</string>
+
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+
+    <screenName name="com.example.adriana.babycare.InicioSesion">InicioSesion</screenName>
+    <screenName name="com.example.adriana.babycare.MainActivity">MainActivity</screenName>
+    <screenName name="com.example.adriana.babycare.Menu">Menu</screenName>
+    <screenName name="com.example.adriana.babycare.PopUp">PopUp</screenName>
+    <screenName name="com.example.adriana.babycare.PopUpRegistroPaciente">PopUpRegistroPaciente</screenName>
+    <screenName name="com.example.adriana.babycare.PopUpRegistroUsuario">PopUpRegistroUsuario</screenName>
+    <screenName name="com.example.adriana.babycare.PopUpResultado">PopUpResultado</screenName>
+    <screenName name="com.example.adriana.babycare.Registro_Menor">RegistroMenor</screenName>
+    <screenName name="com.example.adriana.babycare.Registro_Usuario">Registro_Usuario</screenName>
+
+</resources>

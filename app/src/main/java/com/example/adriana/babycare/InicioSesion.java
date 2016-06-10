@@ -31,6 +31,7 @@ import java.util.List;
 
 public class InicioSesion extends Activity {
     Button botonEntrar;
+    AnalyticsTracker  analyticsTracker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,8 @@ public class InicioSesion extends Activity {
 
             }
         });
+        analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
+
     }
     public void onClickBotonEntrar(View view) {
         final Button botonEntrar = (Button) findViewById(view.getId());
@@ -99,6 +102,7 @@ public class InicioSesion extends Activity {
 
                             Intent intent = new Intent(InicioSesion.this,Menu.class);
                             intent.putExtra("usuario",usuario);
+                            analyticsTracker.trackEvent("Inicio", "Inicio de Sesión", "Se inicio una sesión");
                             startActivity(intent);
                             finish();
 
@@ -134,6 +138,7 @@ public class InicioSesion extends Activity {
             response = cliente.execute(httpPost,contexto);
             HttpEntity entity  = response.getEntity();
             respuesta = EntityUtils.toString(entity,"UTF-8");
+
         }catch (Exception ex){
 
         }
